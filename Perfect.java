@@ -19,7 +19,7 @@ public class Perfect {
 			System.out.println(divisors);					
 	    }
 		else {
-			System.out.println(x + " is not perfect number");
+			System.out.println(x + " is not a perfect number");
 		}
 	}
 }
