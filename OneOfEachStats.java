@@ -3,7 +3,7 @@ import java.util.Random;
 public class OneOfEachStats {
 	public static void main(String[] args) {
 		
-		int T = Integer.parseInt(args[0]);
+		double T = Integer.parseInt(args[0]);
 		int seed = Integer.parseInt(args[1]);
 		
 		int countT = 0;
@@ -14,12 +14,15 @@ public class OneOfEachStats {
 		int max = 0;
 		String MostCommon = "";
 		
+		boolean GirlBorn = false;
+        boolean BoyBorn = false;
+		
+		Random generator = new Random(seed);
+		
 		for(int i = 0; i < T; i++) {
-			boolean GirlBorn = false;
-		    boolean BoyBorn = false;
+	        GirlBorn = false;
+		    BoyBorn = false;
 			int count = 0;
-			
-			Random generator = new Random(seed + i);
 			
 			while(!(BoyBorn && GirlBorn)) {
 				if (generator.nextDouble() <= 0.5) {
@@ -51,9 +54,11 @@ public class OneOfEachStats {
 		} else {
 			MostCommon = "4 or more.";
 		}
+		
+		
 			
 	}	
-		System.out.println("Average: " + (countT) / (double) T + " children to get at least one of each gender.");
+		System.out.println("Average: " + (countT / T) + " children to get at least one of each gender.");
 		System.out.println("Number of families with 2 children: " + TwoChildren);
 		System.out.println("Number of families with 3 children: " + ThreeChildren);
 		System.out.println("Number of families with 4 or more children: " + FourOrMore);
