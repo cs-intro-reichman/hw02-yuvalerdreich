@@ -19,7 +19,7 @@ public class OneOfEachStats {
 		    boolean BoyBorn = false;
 			int count = 0;
 			
-			Random generator = new Random(seed);
+			Random generator = new Random(seed + i);
 			
 			while(!(BoyBorn && GirlBorn)) {
 				if (generator.nextDouble() <= 0.5) {
